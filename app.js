@@ -3,8 +3,8 @@ var restify = require('restify');
 var builder = require('botbuilder');
 var Client = require('node-rest-client').Client;
 
-var APP_ID = "7df8fc3b" // "b2a46cbc"
-var APP_KEY = "984f6248377fc62d6594737d7dd5f449" //"523be4ddcc20678559583725c947b66c" 
+var APP_ID = "7df8fc3b" // "e0d361dd"
+var APP_KEY = "984f6248377fc62d6594737d7dd5f449" //"a7661eaec7d9bb05208ef60e92b86d24"
 
 //=========================================================
 // Bot Setup
@@ -18,9 +18,12 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
 });
   
 // Create chat bot
+
+//'fcd9f593-42e9-4e25-a8e0-39da623b7b05'
+//'1UDd4e7ktNsketpCRtT11Ud'
 var connector = new builder.ChatConnector({
-    appId: 'fcd9f593-42e9-4e25-a8e0-39da623b7b05',
-    appPassword: '1UDd4e7ktNsketpCRtT11Ud'
+    appId: null,
+    appPassword: null
 });
 var bot = new builder.UniversalBot(connector);
 server.post('/api/messages', connector.listen());
