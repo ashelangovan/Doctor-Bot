@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "botbuilder": "^4.5.3",
+    "botbuilder": "^3.13.3",
     "node-rest-client": "^3.1.0",
     "restify": "^8.4.0"
   }
