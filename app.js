@@ -3,8 +3,8 @@ var restify = require('restify');
 var builder = require('botbuilder');
 var Client = require('node-rest-client').Client;
 
-var APP_ID = "7df8fc3b" // "e0d361dd"
-var APP_KEY = "984f6248377fc62d6594737d7dd5f449" //"a7661eaec7d9bb05208ef60e92b86d24"
+var APP_ID = <infermedica_app_id>
+var APP_KEY = <infermedica_app_key>
 
 //=========================================================
 // Bot Setup
@@ -19,8 +19,7 @@ server.listen(process.env.port || process.env.PORT || 3978, function () {
   
 // Create chat bot
 
-//'fcd9f593-42e9-4e25-a8e0-39da623b7b05'
-//'1UDd4e7ktNsketpCRtT11Ud'
+
 var connector = new builder.ChatConnector({
     appId: null,
     appPassword: null
@@ -137,7 +136,7 @@ bot.dialog('/getSymptoms', [
         console.log("get symptoms");
     },
     function (session, results) {
-    	if(results.response.toLowerCase() == '/reset' || (!results.response.toLowerCase().includes('nose') && results.response.toLowerCase().includes('no'))) {
+    	if(results.response.toLowerCase() == '/reset' || (!results.response.toLowerCase().includes('nope') && results.response.toLowerCase().includes('no'))) {
     		session.userData.name = null;
     		session.userData.sex = null;
         	session.userData.age = null;
@@ -165,7 +164,7 @@ bot.dialog('/getSymptoms', [
     			session.beginDialog('/getFurtherSymptoms');
     		}
 		});
-		console.log("symptoms over");
+		console.log("symptoms Over");
     }
 ]);
 
